@@ -10,12 +10,12 @@ class UserController extends Controller
 {
 
     public function index()
-{
-    $post = Post::paginate(10);
+    {
+        $post = Post::paginate(10);
 
-    return view('index',
-    ['Post' => $post]);
-}
+        return view('index',
+        ['Post' => $post]);
+    }
 
 
 }
