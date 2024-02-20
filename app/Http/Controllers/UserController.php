@@ -14,7 +14,7 @@ class UserController extends Controller
         $post = Post::paginate(10);
 
         return view('index',[
-            'Post' => $post
+            'posts' => $post
         ]);
     }
 

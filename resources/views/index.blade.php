@@ -16,10 +16,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($Post as $posts)
+                    @forelse ($posts as $post)
                         <tr>
-                            <td>{{ $posts->id}}</td>
-                            <td>{{ $posts->post}}</td>
+                            <td>{{ $post->id}}</td>
+                            <td>{{ $post->post}}</td>
+                            <td>{{ $post->comments->count() }}</td>
                         </tr>
                     @empty
                         <tr>
@@ -31,7 +32,7 @@
                 </div>
             </table>
             <div class="div">
-                {{ $Post->links() }}
+                {{ $posts->links() }}
         </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
