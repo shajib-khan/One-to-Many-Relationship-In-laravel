@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Factories;
+use App\Models\Post;
 use App\Models\Comment;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -17,9 +18,10 @@ class CommentFactory extends Factory
      */
     public function definition()
     {
+        $posts = Post::all();
         return [
-            "Comment"=>$this->faker->sentence,
-            "post_id"=>$this->faker->randomDigit
+            "comment"=> $this->faker->sentence,
+            "post_id"=> $posts->random()->id
         ];
     }
 }
